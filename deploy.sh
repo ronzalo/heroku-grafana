@@ -20,7 +20,7 @@ fi
 echo "Checking buildpack"
 if ! heroku buildpacks -a $HEROKU_APP | grep "http://github.com/ryandotsmith/null-buildpack.git" > /dev/null; then
     echo "Setting buildpack"
-    heroku buildpacks:set http://github.com/ryandotsmith/null-buildpack.git -a $HEROKU_APP
+    heroku buildpacks:set -a $HEROKU_APP http://github.com/ryandotsmith/null-buildpack.git
 fi
 
 echo "Checking for Postgres addon"
